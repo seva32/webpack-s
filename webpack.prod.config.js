@@ -10,6 +10,7 @@ module.exports = {
 
   entry: {
     app: ["@babel/polyfill", "./src/index.js"],
+    vendor: ["semantic-ui-react", "styled-components"],
   },
 
   output: {
@@ -48,10 +49,16 @@ module.exports = {
           chunks: "all",
           enforce: true,
         },
-        vendor: {
-          chunks: "initial",
-          test: "vendor",
+        // vendor: {
+        //   chunks: "initial",
+        //   test: "vendor",
+        //   name: "vendor",
+        //   enforce: true,
+        // },
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
           name: "vendor",
+          chunks: "initial",
           enforce: true,
         },
       },

@@ -16,7 +16,7 @@ app.use(
 
 app.get("/hello", (req, res) => {
   console.log(req.url);
-  res.send("Hello World S");
+  res.send("Hello World Seb");
 });
 
 app.listen(3000);

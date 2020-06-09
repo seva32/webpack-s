@@ -37,6 +37,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
+    "semantic-ui-react": "^0.88.2",
+    "styled-components": "^5.1.1",
     "webpack-merge": "^4.2.2",
     "webpack-node-externals": "^1.7.2"
   },
