@@ -5,19 +5,19 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const config = require("./webpack.config");
 
-const host = process.env.HOST || "localhost";
-const port = process.env.PORT || 8080;
+// const host = process.env.HOST || "localhost";
+const port = process.env.PORT || 3000;
 
 module.exports = {
   devtool: "inline-source-map",
 
   entry: {
-    app: ["@babel/polyfill", "./src/index.js"],
-    hmr: [
-      `webpack-dev-server/client?http://${host}:${port}`,
-      // "webpack/hot/only-dev-server",  // Hot reload only when compiled successfully
-      "webpack/hot/dev-server", // refresh on failure
-    ],
+    app: ["webpack-hot-middleware/client?reload=true", "./src/index.js"],
+    // hmr: [
+    //   `webpack-dev-server/client?http://${host}:${port}`,
+    //   // "webpack/hot/only-dev-server",  // Hot reload only when compiled successfully
+    //   "webpack/hot/dev-server", // refresh on failure
+    // ],
   },
 
   target: "web",
@@ -25,6 +25,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "[name].js", // Capture name from the entry
+    chunkFilename: "[name].bundle.js",
     publicPath: "/",
   },
 
@@ -47,12 +48,18 @@ module.exports = {
 
   resolve: {
     extensions: [...config.resolve.extensions],
+    alias: {
+      "babel-plugin-syntax-dynamic-import":
+        "@babel/plugin-syntax-dynamic-import",
+    },
   },
 
   devServer: {
-    contentBase: path.join(__dirname, "src"),
+    contentBase: path.join(__dirname, "dist"),
     // hotOnly: true, // Don't refresh if hot loading fails
     hot: true, // to refresh on errors
+    inline: true,
+    disableHostCheck: true,
     compress: true,
     port,
     publicPath: "/",
