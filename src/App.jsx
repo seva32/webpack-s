@@ -1,16 +1,17 @@
 import React from "react";
 // por ahora voy a usar HMR only
 // import { hot } from "react-hot-loader/root";
-import loadable from "@loadable/component";
-import pMinDelay from "p-min-delay";
+// import loadable from "@loadable/component";
+// import pMinDelay from "p-min-delay";
 
 import Home from "./Home";
 // import Loader from "./Loader";
 import ErrorBoundary from "./ErrorBoundary";
+import Posts from "./Posts";
 
-const Posts = loadable(() => {
-  pMinDelay(import(/* webpackChunkName: "lazy" */ "./Posts"), 2000);
-});
+// const Posts = loadable(() => {
+//   pMinDelay(import(/* webpackChunkName: "lazy" */ "./Posts"), 2000);
+// });
 
 const App = () => (
   <div>

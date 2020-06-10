@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./home.css";
 import "./home.scss";
+import Image from "./homeUI";
 import * as Styles from "./home.style";
 
 function Home() {
@@ -18,7 +19,9 @@ function Home() {
       >
         {name}
       </button>
-      <Styles.StyledImage />
+      <Styles.StyledImage>
+        <Image />
+      </Styles.StyledImage>
     </div>
   );
 }

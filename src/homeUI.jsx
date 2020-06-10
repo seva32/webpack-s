@@ -6,7 +6,7 @@ const ImageExampleLink = () => (
   <Image
     src={imgPath || null}
     as="a"
-    size="medium"
+    size="small"
     href="http://google.com"
     target="_blank"
   />
