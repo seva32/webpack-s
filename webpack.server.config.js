@@ -6,7 +6,7 @@ const nodeExternals = require("webpack-node-externals");
 const config = require("./webpack.config");
 
 const nodeEnv = process.env.NODE_ENV;
-const isProduction = nodeEnv !== "development";
+const isProduction = nodeEnv === "production";
 
 const plugins = [
   new webpack.IgnorePlugin({

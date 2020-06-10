@@ -8,7 +8,7 @@ function Home() {
   const [name, setName] = useState("Seb");
   return (
     <div>
-      <h1>Home Pages Now Ready</h1>
+      <h1>Home Pages Now</h1>
       <p className="para">Un ejemplo de paragraph tambien</p>
       <div className="bck" />
       <button

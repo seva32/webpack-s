@@ -1,3 +1,6 @@
+// import "core-js/modules/es.promise";
+// import "core-js/modules/es.array.iterator";
+
 import React from "react";
 import ReactDOM from "react-dom";
 // import { loadableReady } from "@loadable/component";
