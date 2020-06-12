@@ -5,15 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prod": "rm -rf dist && webpack --config webpack/webpack.prod.config.js",
+    "prod": "rm -rf dist && node -r @babel/register node_modules/.bin/webpack -p --config webpack/webpack.prod.config.js",
     "prod:server": "node server/index.js",
     "postinstall": "yarn run prod && yarn run prod:server",
-    "//": "scripts para dev: start (esta en memoria) y dev:server (genera dist/server.prog.js y styles.css), esto era antes de loadable components, luego dev solamente",
-    "start": "rm -rf dist && webpack-dev-server --config ./webpack.dev.config.js",
-    "build:server:once": "cross-env NODE_ENV=development webpack --config webpack.server.config.js",
-    "dev:server": "yarn run build:server:once && npm-run-all --parallel nodemon:prod watch:server",
-    "watch:server": "cross-env NODE_ENV=development webpack --config webpack.server.config.js --watch",
-    "nodemon:prod": "cross-env NODE_ENV=development nodemon server/index.js",
+    "//": "postinstall acepta es6 con el script y dev con babelrc overrides",
     "dev": "cross-env nodemon server/index.js"
   },
   "author": "",

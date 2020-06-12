@@ -7,7 +7,7 @@ const ImageExampleLink = () => (
     src={imgPath || null}
     as="a"
     size="small"
-    href="http://google.com"
+    href="http://sebastianfantini.com"
     target="_blank"
   />
 );

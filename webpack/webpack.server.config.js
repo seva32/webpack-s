@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const webpack = require("webpack");
-const path = require("path");
-const nodeExternals = require("webpack-node-externals");
+import webpack from "webpack";
+import path from "path";
+import nodeExternals from "webpack-node-externals";
 
-const config = require("./webpack.config");
+import config from "./webpack.config";
 
 const nodeEnv = process.env.NODE_ENV;
 const isProduction = nodeEnv === "production";
@@ -26,7 +26,7 @@ const entry = isProduction
       path.resolve(path.join(__dirname, "./server/index.js")),
     ];
 // We explicitly set the mode to development, to allow webpack to figure out that we are building for the backend and not the frontend.
-module.exports = {
+export default {
   mode: "development",
   stats: "minimal",
   devtool: "eval-source-map",

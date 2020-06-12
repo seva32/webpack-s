@@ -22,7 +22,7 @@
 
 .bck {
   background-image: url("../public/images/notfound.png");
-  background-color: bisque;
+  background-color: rgb(27, 240, 211);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100vw;
