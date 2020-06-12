@@ -6,7 +6,7 @@ import ReactDOMServer from "react-dom/server";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 import App from "../src/App";
-import config from "../webpack.dev.config";
+import config from "../webpack/webpack.dev.config";
 
 const app = express();
 

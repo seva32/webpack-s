@@ -14,7 +14,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "..", "dist"),
     filename: "[name].js",
   },
 
@@ -30,7 +30,7 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.join(__dirname, "public/index.html"),
+      template: path.join(__dirname, "..", "/public/index.html"),
     }),
     ...config.plugins,
   ],
