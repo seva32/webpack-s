@@ -16,9 +16,6 @@ export default {
         test: /\.(js|jsx)$/,
         use: ["babel-loader", "eslint-loader"],
         exclude: /node_modules/,
-        // options: {
-        //       babelrc: true,
-        //     },
       },
       {
         test: /\.module\.s(a|c)ss$/,
@@ -27,7 +24,7 @@ export default {
             loader: MiniCssExtractPlugin.loader,
             options: {
               hmr: devMode,
-              reloadAll: true, // // if hmr does not work, this is a forceful method.
+              reloadAll: true, // if hmr does not work, this is a forceful method.
             },
           },
           {

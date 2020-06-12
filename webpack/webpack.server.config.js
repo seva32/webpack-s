@@ -5,8 +5,7 @@ import nodeExternals from "webpack-node-externals";
 
 import config from "./webpack.config.babel";
 
-const nodeEnv = process.env.NODE_ENV;
-const isProduction = nodeEnv === "production";
+const devEnv = process.env.NODE_ENV === "development";
 
 const plugins = [
   new webpack.IgnorePlugin({
@@ -15,16 +14,16 @@ const plugins = [
   }),
   ...config.plugins,
 ];
-if (!isProduction) {
+if (devEnv) {
   plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
-const entry = isProduction
-  ? [path.resolve(path.join(__dirname, "./server/index.js"))]
-  : [
+const entry = devEnv
+  ? [
       "webpack/hot/poll?1000",
       path.resolve(path.join(__dirname, "./server/index.js")),
-    ];
+    ]
+  : [path.resolve(path.join(__dirname, "./server/index.js"))];
 // We explicitly set the mode to development, to allow webpack to figure out that we are building for the backend and not the frontend.
 module.exports = {
   mode: "development",

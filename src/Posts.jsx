@@ -23,7 +23,7 @@ function Posts() {
     });
 
     return () => {
-      console.warn("This will be logged on unmount");
+      console.warn("Posts unmounted");
     };
   }, [setPosts]);
 
@@ -35,7 +35,7 @@ function Posts() {
         <List>
           {posts.map((post) => (
             <List.Item key={post.id}>
-              <List.Header>{post.title}</List.Header>A lovely mock
+              <List.Header>{post.title}</List.Header>A love t
             </List.Item>
           ))}
         </List>

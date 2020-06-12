@@ -20,7 +20,7 @@ require("@babel/register")({
     "dynamic-import-node",
   ],
 });
-// require("@babel/polyfill");
+// require("@babel/polyfill"); ya esta en webpack
 global.Promise = require("bluebird");
 
 require.extensions[".svg"] = () => {};

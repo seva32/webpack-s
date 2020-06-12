@@ -13,18 +13,13 @@ export default {
 
   entry: {
     app: ["webpack-hot-middleware/client?reload=true", "./src/index.js"],
-    // hmr: [
-    //   `webpack-dev-server/client?http://${host}:${port}`,
-    //   // "webpack/hot/only-dev-server",  // Hot reload only when compiled successfully
-    //   "webpack/hot/dev-server", // refresh on failure
-    // ],
   },
 
   target: "web",
 
   output: {
     path: path.join(__dirname, "..", "dist"),
-    filename: "[name].js", // Capture name from the entry
+    filename: "[name].js",
     chunkFilename: "[name].bundle.js",
     publicPath: "/",
   },
@@ -57,8 +52,7 @@ export default {
 
   devServer: {
     contentBase: path.join(__dirname, "..", "dist"),
-    // hotOnly: true, // Don't refresh if hot loading fails
-    hot: true, // to refresh on errors
+    hot: true,
     inline: true,
     disableHostCheck: true,
     compress: true,
