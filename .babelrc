@@ -16,6 +16,13 @@
     ["@babel/plugin-transform-runtime", { "corejs": 3, "proposals": true }],
     "@babel/plugin-syntax-dynamic-import",
     "@loadable/babel-plugin",
-    "dynamic-import-node"
+    "dynamic-import-node",
+    "@babel/plugin-proposal-class-properties"
+  ],
+  "overrides": [
+    {
+      "test": ["./webpack"],
+      "presets": [["@babel/preset-env"]]
+    }
   ]
 }

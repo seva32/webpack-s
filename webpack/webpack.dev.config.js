@@ -23,7 +23,7 @@ module.exports = {
   target: "web",
 
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "..", "dist"),
     filename: "[name].js", // Capture name from the entry
     chunkFilename: "[name].bundle.js",
     publicPath: "/",
@@ -41,7 +41,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(), // communicate changes to WDS, or use --hot in cli
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.join(__dirname, "public/index.html"),
+      template: path.join(__dirname, "..", "public/index.html"),
     }),
     ...config.plugins,
   ],
@@ -55,7 +55,7 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, "..", "dist"),
     // hotOnly: true, // Don't refresh if hot loading fails
     hot: true, // to refresh on errors
     inline: true,

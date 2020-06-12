@@ -36,8 +36,8 @@ module.exports = {
   target: "node",
   entry,
   output: {
-    publicPath: "./",
-    path: path.resolve(__dirname, "./dist"),
+    publicPath: "/",
+    path: path.join(__dirname, "..", "dist"),
     filename: "server.prod.js",
     libraryTarget: "commonjs2",
   },
@@ -48,7 +48,7 @@ module.exports = {
       ".loader.js",
       ...config.resolve.extensions,
     ],
-    modules: [path.resolve(__dirname, "node_modules")],
+    modules: [path.join(__dirname, "..", "node_modules")],
   },
   module: {
     rules: [...config.module.rules],
