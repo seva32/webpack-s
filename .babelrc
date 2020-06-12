@@ -10,7 +10,6 @@
     ],
     "@babel/preset-react"
   ],
-  // "plugins": ["react-hot-loader/babel"] -> no xq estoy solo con HMR
   "plugins": [
     "add-module-exports",
     ["@babel/plugin-transform-runtime", { "corejs": 3, "proposals": true }],
