@@ -35,7 +35,7 @@ function Posts() {
         <List>
           {posts.map((post) => (
             <List.Item key={post.id}>
-              <List.Header>{post.title}</List.Header>A lovely luck
+              <List.Header>{post.title}</List.Header>A lovely mock
             </List.Item>
           ))}
         </List>

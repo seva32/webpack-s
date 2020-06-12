@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prod": "rm -rf dist && webpack --config webpack/webpack.prod.config.js",
+    "prod": "rm -rf dist && node -r @babel/register webpack --config webpack/webpack.prod.config.js",
     "prod:server": "node server/index.js",
     "postinstall": "yarn run prod && yarn run prod:server",
     "//": "scripts para dev: start (esta en memoria) y dev:server (genera dist/server.prog.js y styles.css), esto era antes de loadable components, luego dev solamente",

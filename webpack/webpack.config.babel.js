@@ -1,10 +1,12 @@
-require("dotenv").config({ silent: true });
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const svgToMiniDataURI = require("mini-svg-data-uri");
+import dotenv from "dotenv";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import svgToMiniDataURI from "mini-svg-data-uri";
+
+dotenv.config({ silent: true });
 
 const devMode = process.env.NODE_ENV === "development";
 
-module.exports = {
+export default {
   resolve: {
     extensions: [".js", ".jsx", ".scss"],
   },

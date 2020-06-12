@@ -1,11 +1,11 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable import/no-extraneous-dependencies */
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpack = require("webpack");
-const config = require("./webpack.config");
+import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import webpack from "webpack";
+import config from "./webpack.config.babel";
 
-module.exports = {
+export default {
   devtool: "source-map",
 
   entry: {

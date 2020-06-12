@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const webpack = require("webpack");
-const path = require("path");
-const nodeExternals = require("webpack-node-externals");
+import webpack from "webpack";
+import path from "path";
+import nodeExternals from "webpack-node-externals";
 
-const config = require("./webpack.config");
+import config from "./webpack.config.babel";
 
 const nodeEnv = process.env.NODE_ENV;
 const isProduction = nodeEnv === "production";

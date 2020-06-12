@@ -19,11 +19,10 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.use(
-  express.static("dist")
-  // , {
-  // index: true,
-  // etag: false
-  // })
+  express.static("dist", {
+    index: ["index.html"],
+    // etag: false
+  })
 );
 
 app.get("/hello", (req, res) => {

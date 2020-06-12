@@ -1,14 +1,14 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable import/no-extraneous-dependencies */
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpack = require("webpack");
-const config = require("./webpack.config");
+import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import webpack from "webpack";
+import config from "./webpack.config.babel";
 
 // const host = process.env.HOST || "localhost";
 const port = process.env.PORT || 3000;
 
-module.exports = {
+export default {
   devtool: "inline-source-map",
 
   entry: {
@@ -48,6 +48,7 @@ module.exports = {
 
   resolve: {
     extensions: [...config.resolve.extensions],
+    modules: [path.join(__dirname, "..", "src"), "node_modules"],
     alias: {
       "babel-plugin-syntax-dynamic-import":
         "@babel/plugin-syntax-dynamic-import",
