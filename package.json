@@ -24,7 +24,7 @@
     "@hot-loader/react-dom": "^16.13.0",
     "@loadable/component": "^5.12.0",
     "@loadable/server": "^5.12.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-plugin-css-modules-transform": "^1.6.2",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "bluebird": "^3.7.2",
